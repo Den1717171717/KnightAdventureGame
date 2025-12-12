@@ -1,0 +1,19 @@
+
+# Unity
+[Ll]ibrary/
+[Tt]emp/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Oo]bj/
+
+# Visual Studio / Rider
+.vs/
+*.csproj
+*.sln
+*.user
+*.unityproj
+
+# OS
+.DS_Store
+Thumbs.db
