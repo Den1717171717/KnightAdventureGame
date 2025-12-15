@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting.InputSystem;
 using UnityEngine;
 
+[SelectionBase]
 public class Player : MonoBehaviour
 {   
     public static Player Instance { get; private set; }
