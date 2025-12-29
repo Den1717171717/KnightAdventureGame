@@ -84,6 +84,12 @@ public class EnemyAi : MonoBehaviour
 
     }
 
+    public void SetDeathState()
+    {
+        _navMeshAgent.ResetPath();
+        _currentState = State.Death;
+    }
+
     public float GetRoamingAnimationSpeed()
     {
         return _navMeshAgent.speed / _roamingSpeed;
@@ -122,15 +128,7 @@ public class EnemyAi : MonoBehaviour
 
         }
     }
-    private void AttackingTarget()
-    {
-        if (Time.time > _nextAttackTime)
-        {
-            OnEnemyAttack?.Invoke(this, EventArgs.Empty);
-
-            _nextAttackTime = Time.time + _attackRate;
-        }
-    }
+    
     private void CheckCurrentState()
     {
         float distanceToPlayer=Vector3.Distance(transform.position , Player.Instance.transform.position);
@@ -173,6 +171,16 @@ public class EnemyAi : MonoBehaviour
         }
     }
 
+    private void AttackingTarget()
+    {
+        if (Time.time > _nextAttackTime)
+        {
+            OnEnemyAttack?.Invoke(this, EventArgs.Empty);
+
+            _nextAttackTime = Time.time + _attackRate;
+        }
+    }
+
     private void MovementDirectionHandler()
     {
         if (Time.time > _nextCheckDirectionTime)
@@ -192,9 +200,10 @@ public class EnemyAi : MonoBehaviour
     }
 
     private void ChasingTarget()
-    {
+    { 
         _navMeshAgent.SetDestination(Player.Instance.transform.position);
     }
+
 
     private void Roaming()
 
@@ -215,3 +224,4 @@ public class EnemyAi : MonoBehaviour
         transform.rotation = sourcePosition.x > targetPosition.x ? Quaternion.Euler(0, -180, 0) : Quaternion.Euler(0, 0, 0);
     }
 }
+ 
