@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 434050831275084348}
   - component: {fileID: 5421902171154641277}
   - component: {fileID: 7233058801317935374}
+  - component: {fileID: 6089236254956916409}
+  - component: {fileID: 8624878005131312679}
   m_Layer: 0
   m_Name: SkeletonVisual
   m_TagString: Untagged
@@ -82,7 +84,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1172608455, guid: 02f5be408b6c78147afade9397d6d5b6, type: 3}
+  m_Sprite: {fileID: 1691212674, guid: ee6862a5ca95b4f4ca40dba0e792374d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -127,6 +129,109 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 527a75e275b283947ba301878bef0dfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkeletonVisual
+  _enemyAI: {fileID: 5824331648847778137}
+  _enemyEntity: {fileID: 5398758279154182547}
+--- !u!60 &6089236254956916409
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470226479577861543}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.33}
+    oldSize: {x: 7.5, y: 7.5}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.0500001, y: -0.1250002}
+      - {x: 1.3000001, y: 0.27499983}
+      - {x: 2.95, y: 0.4249998}
+      - {x: 3.65, y: 0.92499983}
+      - {x: 3.75, y: 1.2749999}
+      - {x: 3.75, y: 1.9749998}
+      - {x: 3.6000001, y: 2.175}
+      - {x: 3.05, y: 2.6249998}
+      - {x: 2.4, y: 2.725}
+      - {x: 1.0500001, y: 2.725}
+      - {x: 0.90000004, y: 2.6249998}
+      - {x: 0.2, y: 2.5749998}
+      - {x: -0.25, y: 2.1249998}
+      - {x: -0.45000002, y: 1.6749998}
+      - {x: -0.45000002, y: 1.3749999}
+      - {x: -0.05, y: 1.2249998}
+      - {x: -0.4, y: 0.3249998}
+      - {x: -0.4, y: -0.02500019}
+      - {x: -0.3, y: -0.1250002}
+      - {x: -0.1, y: -0.1250002}
+      - {x: 0, y: -0.02500019}
+      - {x: 0.25, y: 0.3249998}
+      - {x: 0.7, y: -0.1250002}
+    - - {x: 1.35, y: 1.4749998}
+      - {x: 1.35, y: 1.7749999}
+      - {x: 1.45, y: 2.0249999}
+      - {x: 1.45, y: 2.3749998}
+      - {x: 1.35, y: 2.425}
+      - {x: 1.4, y: 2.3749998}
+      - {x: 1.7, y: 2.3749998}
+      - {x: 1.75, y: 2.3249998}
+      - {x: 2.1000001, y: 2.2749999}
+      - {x: 2.45, y: 2.0749998}
+      - {x: 2.55, y: 1.7249998}
+      - {x: 2.5, y: 1.6749998}
+      - {x: 1.95, y: 1.3749999}
+      - {x: 1.75, y: 1.3749999}
+      - {x: 1.5, y: 1.3249998}
+      - {x: 1.45, y: 1.2749999}
+      - {x: 1.15, y: 1.2249998}
+      - {x: 1.2, y: 1.2249998}
+  m_UseDelaunayMesh: 0
+--- !u!114 &8624878005131312679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470226479577861543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20826b6cadd61cd49b660b1bbc1cf765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyEntity
+  _maxHealth: 0
 --- !u!1 &2390055100163532650
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,6 +244,7 @@ GameObject:
   - component: {fileID: 5559051385859652081}
   - component: {fileID: 1798957777188920655}
   - component: {fileID: 2550676424703886870}
+  - component: {fileID: -2905318895309649315}
   - component: {fileID: 5824331648847778137}
   - component: {fileID: 5398758279154182547}
   m_Layer: 0
@@ -247,7 +353,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.2800932, y: 1.217859}
+  m_Offset: {x: 0.2800932, y: 1.1355519}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -257,8 +363,66 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.0179105, y: 2.6734147}
+  m_Size: {x: 1.0179105, y: 2.5088005}
   m_EdgeRadius: 0
+--- !u!60 &-2905318895309649315
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2390055100163532650}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 2.6810567, y: 0.5197263}
+      - {x: 3.5797715, y: 1.0665839}
+      - {x: 3.7331662, y: 1.8097973}
+      - {x: 3.0471575, y: 2.588133}
+      - {x: 1.1523013, y: 2.6827257}
+      - {x: 1.321465, y: 2.4392896}
+      - {x: 0.82312155, y: 1.5527706}
+      - {x: 0.74742085, y: 1.2943896}
+      - {x: -0.16212499, y: 0.8737087}
+      - {x: 1.3169036, y: 0.3986323}
+      - {x: 1.4997711, y: 0.3821792}
+  m_UseDelaunayMesh: 0
 --- !u!114 &5824331648847778137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,9 +439,11 @@ MonoBehaviour:
   roamingDistanceMax: 7
   roamimgDistanceMin: 3
   roamimgTimerMax: 2
-  _isChasingEnemy: 0
-  _isAttackingEnemy: 0
+  _isChasingEnemy: 1
+  _isAttackingEnemy: 1
   _attackingDistance: 2
+  _chasingDistance: 4
+  _chasingSpeedMultiplier: 2
   _attackRate: 2
 --- !u!114 &5398758279154182547
 MonoBehaviour:
