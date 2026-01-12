@@ -1,25 +1,33 @@
 {
-    "version": 1,
     "name": "PlayerInputActions",
     "maps": [
         {
             "name": "Player",
-            "id": "3d788535-00d1-4151-a3ac-4ed5b506c58a",
+            "id": "5a93cf5f-91ad-4497-b334-71a173b8560d",
             "actions": [
                 {
                     "name": "Move",
                     "type": "Value",
-                    "id": "3bb4160e-339e-47df-8c26-9c5d47db23a0",
+                    "id": "de14a4fd-4abe-427d-91e8-91bd9a6c3e50",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Dash",
+                    "type": "Button",
+                    "id": "47612e1e-b9e1-4e18-80ab-e2950d93b590",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
                     "name": "WASD",
-                    "id": "db2ebd9b-acac-470a-997e-0157d696563e",
+                    "id": "b7f8b274-0e1f-4b60-89b3-957211db21c9",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
@@ -30,7 +38,7 @@
                 },
                 {
                     "name": "up",
-                    "id": "a357755a-1bcb-4555-b6c0-94f6d8eb91c5",
+                    "id": "c867ef25-3284-4a82-8dc9-40c2a07ad57d",
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
@@ -41,7 +49,7 @@
                 },
                 {
                     "name": "down",
-                    "id": "418cf821-2df9-472c-af9f-63af4ced5f1d",
+                    "id": "f4760b64-745b-4a26-aeae-b729bbb57490",
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
@@ -52,7 +60,7 @@
                 },
                 {
                     "name": "left",
-                    "id": "9c44baa4-36c1-4466-99e9-4d188156d208",
+                    "id": "92d7e64a-fadd-4a8f-93ed-d0a9d070866f",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
@@ -63,7 +71,7 @@
                 },
                 {
                     "name": "right",
-                    "id": "0d15e25b-37fc-4a0b-be42-636c4623bf32",
+                    "id": "a46f25fd-d119-43ce-a0ee-c8ca1163ff94",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
@@ -74,7 +82,7 @@
                 },
                 {
                     "name": "Arrow Keys",
-                    "id": "c3738741-7ddf-4e41-b1f8-b3852ce47bc8",
+                    "id": "5e6b232a-e0cd-4c2b-83a8-e89122237ed1",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
@@ -85,7 +93,7 @@
                 },
                 {
                     "name": "up",
-                    "id": "31c40f4c-2fa5-4b28-a341-0d1cb671b673",
+                    "id": "266da773-ac19-4091-a8d6-bdbf548c248f",
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
@@ -96,7 +104,7 @@
                 },
                 {
                     "name": "down",
-                    "id": "17f76458-e892-49d8-9f99-735771581d07",
+                    "id": "46da326f-c98d-47bb-8507-97171afa8788",
                     "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
@@ -107,7 +115,7 @@
                 },
                 {
                     "name": "left",
-                    "id": "dcfa4c22-d584-464d-83f5-8629ef43f8fc",
+                    "id": "564cb36f-277e-4acf-b986-a1e1583caa22",
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
@@ -118,7 +126,7 @@
                 },
                 {
                     "name": "right",
-                    "id": "58627d97-4681-4c29-8855-604474922f22",
+                    "id": "91fefaff-9f14-4f0a-874b-03717e6b3711",
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
@@ -126,18 +134,29 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "b3e0d4cf-3ceb-434c-9432-f740c8bee66a",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
         {
             "name": "Combat",
-            "id": "98d6b9e6-c75d-495b-b53d-10c807cef2e1",
+            "id": "df923e6b-c6bf-4546-b23d-ac36a7c56c11",
             "actions": [
                 {
                     "name": "Attack",
                     "type": "Button",
-                    "id": "df90c7b0-83f6-4dff-a70e-097d39e48bff",
-                    "expectedControlType": "",
+                    "id": "72d64e79-4a0a-4daf-8495-79f3cff761a4",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -146,7 +165,7 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "1a466c14-599a-4e91-a579-999e4effba84",
+                    "id": "9d72891c-946e-4df7-bab1-d3a2480259d2",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",

@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: 50e2e0a4d51daa24a85ab48ed1d27e42
+guid: d9a3c093cbcb8fa4eaca91d929f897fa
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 13
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -67,7 +67,7 @@ TextureImporter:
   swizzle: 50462976
   cookieLightType: 0
   platformSettings:
-  - serializedVersion: 4
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -80,12 +80,38 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -107,13 +133,12 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5, y: 0.33}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5dfc33c9155c104aa4c206b097a5fbc
-      internalID: 72368088
+      spriteID: 8764dba84df875a45bcb53cf7727e033
+      internalID: -1720964574
       vertices: []
       indices: 
       edges: []
@@ -129,13 +154,12 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5, y: 0.33}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0424d2124baf01748af33506dcb3872f
-      internalID: 742253969
+      spriteID: 78afde0c1a1f2aa47a056ffca1483761
+      internalID: 1984404875
       vertices: []
       indices: 
       edges: []
@@ -151,13 +175,12 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5, y: 0.33}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aecf396629fb48a4d83ff34b18be9af5
-      internalID: -1453682664
+      spriteID: 2a37542175aa58f4caf8c4772ce53e94
+      internalID: 1596533539
       vertices: []
       indices: 
       edges: []
@@ -173,37 +196,31 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5, y: 0.33}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 771172782ddb6af4aa10e79d6411d8ad
-      internalID: 966825765
+      spriteID: caf099d33a655d542880d352fa378995
+      internalID: 41338994
       vertices: []
       indices: 
       edges: []
       weights: []
     outline: []
-    customData: 
     physicsShape: []
     bones: []
-    spriteID: 50bbb414f7bd4d8488054032fdf6d01a
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":150.0,"y":150.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.33000001311302187},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Death_0: 72368088
-      Death_1: 742253969
-      Death_2: -1453682664
-      Death_3: 966825765
+      Death_0: -1720964574
+      Death_1: 1984404875
+      Death_2: 1596533539
+      Death_3: 41338994
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

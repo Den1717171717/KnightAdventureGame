@@ -1,6 +1,12 @@
-﻿using UnityEditor;
+﻿using NavMeshPlus.Extensions;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using UnityEditor;
 
-namespace NavMeshPlus.Extensions.Editors
+namespace NavMeshPlus.Editors.Extensions
 {
     [CanEditMultipleObjects]
     [CustomEditor(typeof(AgentOverride2d))]

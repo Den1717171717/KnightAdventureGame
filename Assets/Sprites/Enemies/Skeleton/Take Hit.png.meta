@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: dc83963f2c0b54541b40cceae0c1c783
+guid: 973dc7a261748f045bc597f38d040b58
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 13
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -67,7 +67,7 @@ TextureImporter:
   swizzle: 50462976
   cookieLightType: 0
   platformSettings:
-  - serializedVersion: 4
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -80,12 +80,38 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -107,13 +133,12 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5, y: 0.33}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12f017c781e5c8d419bca42eaeb4c064
-      internalID: -1574854966
+      spriteID: fb23758d2d2aa7e4ea9eb9e2864c7a94
+      internalID: 1990470799
       vertices: []
       indices: 
       edges: []
@@ -129,13 +154,12 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5, y: 0.33}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e9a84654b6431447a47012eba37edd3
-      internalID: -226088848
+      spriteID: 06f0af7c5bb6ff944bb276b589269b5f
+      internalID: 398463545
       vertices: []
       indices: 
       edges: []
@@ -151,13 +175,12 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5, y: 0.33}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84866349469d6944f98de98068739e07
-      internalID: -1256224799
+      spriteID: 4f7047e9d6f5bf3498948cf1d44d6dd1
+      internalID: 1690769921
       vertices: []
       indices: 
       edges: []
@@ -173,37 +196,31 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5, y: 0.33}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f68fbdfbacfd42444b1000a73975b160
-      internalID: -108968322
+      spriteID: cd49d1812fb9c4d48b8154e10d4043be
+      internalID: -1612959946
       vertices: []
       indices: 
       edges: []
       weights: []
     outline: []
-    customData: 
     physicsShape: []
     bones: []
-    spriteID: 5c8903d9c5e745943a63ba85b7ae831b
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":150.0,"y":150.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.33000001311302187},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Take Hit_0: -1574854966
-      Take Hit_1: -226088848
-      Take Hit_2: -1256224799
-      Take Hit_3: -108968322
+      Take Hit_0: 1990470799
+      Take Hit_1: 398463545
+      Take Hit_2: 1690769921
+      Take Hit_3: -1612959946
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

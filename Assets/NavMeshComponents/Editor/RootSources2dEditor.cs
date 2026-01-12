@@ -1,7 +1,10 @@
-﻿using UnityEditor;
+﻿using UnityEngine.AI;
+using UnityEngine;
+using UnityEditor;
+using NavMeshPlus.Extensions;
 using NavMeshPlus.Components;
 
-namespace NavMeshPlus.Extensions.Editors
+namespace NavMeshPlus.Editors.Extensions
 {
     [CanEditMultipleObjects]
     [CustomEditor(typeof(RootSources2d))]

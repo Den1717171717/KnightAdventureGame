@@ -1,15 +1,9 @@
 fileFormatVersion: 2
-guid: 0bc8b765eed08e949987189775ba8369
+guid: 50112a9ed9ca86e429d551bdafe34278
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -1071302430762533504
-    second: Hero_Idle_0
-  - first:
-      213: 402119133011603176
-    second: Hero_Idle_1
+  internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 13
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -73,7 +67,7 @@ TextureImporter:
   swizzle: 50462976
   cookieLightType: 0
   platformSettings:
-  - serializedVersion: 4
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -86,8 +80,21 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
+  - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -106,20 +113,19 @@ TextureImporter:
       name: Hero_Idle_0
       rect:
         serializedVersion: 2
-        x: 41
-        y: 29
-        width: 16
-        height: 17
+        x: 0
+        y: 0
+        width: 96
+        height: 64
       alignment: 9
-      pivot: {x: 0.4858296, y: 0.079921275}
+      pivot: {x: 0.5091752, y: 0.48012087}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 08df26f7d18f121f0800000000000000
-      internalID: -1071302430762533504
+      spriteID: 80c80fd08f2f4474f8d94f242c3d650f
+      internalID: 1585251857
       vertices: []
       indices: 
       edges: []
@@ -128,40 +134,36 @@ TextureImporter:
       name: Hero_Idle_1
       rect:
         serializedVersion: 2
-        x: 137
-        y: 29
-        width: 16
-        height: 18
+        x: 96
+        y: 0
+        width: 96
+        height: 64
       alignment: 9
-      pivot: {x: 0.480546, y: 0.07326402}
+      pivot: {x: 0.50941783, y: 0.47522885}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8ee6b80983d949500800000000000000
-      internalID: 402119133011603176
+      spriteID: 9e63b98cd8ef00c4ba5fa0bd8bb9acc0
+      internalID: 753202447
       vertices: []
       indices: 
       edges: []
       weights: []
     outline: []
-    customData: 
     physicsShape: []
     bones: []
-    spriteID: 3907a996482b57f4996e7d2c0a7de15f
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    spriteCustomMetadata:
-      entries: []
     nameFileIdTable:
-      Hero_Idle_0: -1071302430762533504
-      Hero_Idle_1: 402119133011603176
+      Hero_Idle_0: 1585251857
+      Hero_Idle_1: 753202447
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

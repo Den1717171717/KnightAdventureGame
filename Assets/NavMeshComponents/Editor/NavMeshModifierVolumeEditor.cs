@@ -1,9 +1,13 @@
 using UnityEditor.IMGUI.Controls;
 using UnityEditorInternal;
+using UnityEngine.AI;
 using UnityEngine;
+using NavMeshPlus.Extensions;
 using UnityEditor;
+using UnityEditor.AI;
+using NavMeshPlus.Components;
 
-namespace NavMeshPlus.Components.Editors
+namespace NavMeshPlus.Editors.Components
 {
     [CanEditMultipleObjects]
     [CustomEditor(typeof(NavMeshModifierVolume))]
@@ -29,7 +33,15 @@ namespace NavMeshPlus.Components.Editors
             m_AffectedAgents = serializedObject.FindProperty("m_AffectedAgents");
             m_Area = serializedObject.FindProperty("m_Area");
             m_Center = serializedObject.FindProperty("m_Center");
-            m_Size = serializedObject.FindProperty("m_Size");        }
+            m_Size = serializedObject.FindProperty("m_Size");
+
+            NavMeshVisualizationSettings.showNavigation++;
+        }
+
+        void OnDisable()
+        {
+            NavMeshVisualizationSettings.showNavigation--;
+        }
 
         Bounds GetBounds()
         {
@@ -53,8 +65,7 @@ namespace NavMeshPlus.Components.Editors
             serializedObject.ApplyModifiedProperties();
         }
 
-
-        [DrawGizmo(GizmoType.InSelectionHierarchy | GizmoType.Active)]
+        [DrawGizmo(GizmoType.Selected | GizmoType.Active)]
         static void RenderBoxGizmo(NavMeshModifierVolume navModifier, GizmoType gizmoType)
         {
             var color = navModifier.enabled ? s_HandleColor : s_HandleColorDisabled;
@@ -80,6 +91,7 @@ namespace NavMeshPlus.Components.Editors
         [DrawGizmo(GizmoType.NotInSelectionHierarchy | GizmoType.Pickable)]
         static void RenderBoxGizmoNotSelected(NavMeshModifierVolume navModifier, GizmoType gizmoType)
         {
+            if (NavMeshVisualizationSettings.showNavigation > 0)
             {
                 var color = navModifier.enabled ? s_HandleColor : s_HandleColorDisabled;
                 var oldColor = Gizmos.color;

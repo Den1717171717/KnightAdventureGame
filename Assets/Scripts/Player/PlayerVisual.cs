@@ -2,36 +2,49 @@ using UnityEngine;
 
 public class PlayerVisual : MonoBehaviour
 {
-    private Animator animator;
-    private SpriteRenderer spriteRenderer;
-    private const string IS_RUNNING = "IsRunning";
+    private static readonly int Die = Animator.StringToHash(IsDie);
+    private static readonly int Running = Animator.StringToHash(IsRunning);
+    private Animator _animator;
+    private SpriteRenderer _spriteRenderer;
+    private FlashBlink _flashBlink;
+
+    private const string IsRunning = "IsRunning";
+    private const string IsDie = "IsDie";
 
     private void Awake()
     {
-        animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-
-
+        _animator = GetComponent<Animator>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _flashBlink = GetComponent<FlashBlink>();
     }
+
+    private void Start()
+    {
+        Player.Instance.OnPlayerDeath += Player_OnPlayerDeath;
+    }
+
+    private void Player_OnPlayerDeath(object sender, System.EventArgs e)
+    {
+        _animator.SetBool(Die, true);
+        _flashBlink.StopBlinking();
+    }
+
     private void Update()
     {
-        animator.SetBool(IS_RUNNING, Player.Instance.IsRunning());
-        AdjustPlayerFacingDirection();
+        _animator.SetBool(Running, Player.Instance.IsRunning());
+
+        if (Player.Instance.IsAlive())
+            AdjustPlayerFacingDirection();
     }
     private void AdjustPlayerFacingDirection()
     {
         Vector3 mousePos = GameInput.Instance.GetMousePosition();
         Vector3 playerPosition = Player.Instance.GetPlayerScreenPosition();
-        if (mousePos.x < playerPosition.x)
-        {
-            spriteRenderer.flipX = true;
 
-        }
-        else
-        {
-
-            spriteRenderer.flipX = false;
-        }
-
+        _spriteRenderer.flipX = mousePos.x < playerPosition.x;
+    }
+    private void OnDestroy()
+    {
+        Player.Instance.OnPlayerDeath -= Player_OnPlayerDeath;
     }
 }

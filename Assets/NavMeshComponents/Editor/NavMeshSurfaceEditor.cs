@@ -7,9 +7,9 @@ using UnityEngine.AI;
 using UnityEngine;
 using UnityEditor;
 using UnityEditor.AI;
-using System.Reflection;
+using NavMeshPlus.Components;
 
-namespace NavMeshPlus.Components.Editors
+namespace NavMeshPlus.Editors.Components
 {
     [CanEditMultipleObjects]
     [CustomEditor(typeof(NavMeshSurface))]
@@ -27,8 +27,6 @@ namespace NavMeshPlus.Components.Editors
         SerializedProperty m_TileSize;
         SerializedProperty m_UseGeometry;
         SerializedProperty m_VoxelSize;
-        SerializedProperty m_MinRegionArea;
-        SerializedProperty m_HideEditorLogs;
 
 #if NAVMESHCOMPONENTS_SHOW_NAVMESHDATA_REF
         SerializedProperty m_NavMeshData;
@@ -36,7 +34,7 @@ namespace NavMeshPlus.Components.Editors
         class Styles
         {
             public readonly GUIContent m_LayerMask = new GUIContent("Include Layers");
-			public readonly GUIContent m_MinRegionArea = new GUIContent("Minimum Region Area");
+
             public readonly GUIContent m_ShowInputGeom = new GUIContent("Show Input Geom");
             public readonly GUIContent m_ShowVoxels = new GUIContent("Show Voxels");
             public readonly GUIContent m_ShowRegions = new GUIContent("Show Regions");
@@ -75,24 +73,17 @@ namespace NavMeshPlus.Components.Editors
             m_TileSize = serializedObject.FindProperty("m_TileSize");
             m_UseGeometry = serializedObject.FindProperty("m_UseGeometry");
             m_VoxelSize = serializedObject.FindProperty("m_VoxelSize");
-            m_MinRegionArea = serializedObject.FindProperty("m_MinRegionArea");
-            m_HideEditorLogs = serializedObject.FindProperty("m_HideEditorLogs");
 
 #if NAVMESHCOMPONENTS_SHOW_NAVMESHDATA_REF
             m_NavMeshData = serializedObject.FindProperty("m_NavMeshData");
 #endif
-
-#if !UNITY_2022_2_OR_NEWER
             NavMeshVisualizationSettings.showNavigation++;
-#endif
         }
 
-#if !UNITY_2022_2_OR_NEWER
         void OnDisable()
         {
             NavMeshVisualizationSettings.showNavigation--;
         }
-#endif
 
         Bounds GetBounds()
         {
@@ -195,15 +186,12 @@ namespace NavMeshPlus.Components.Editors
                     EditorGUI.indentLevel--;
                 }
 
-                EditorGUILayout.PropertyField(m_MinRegionArea, s_Styles.m_MinRegionArea);
 
                 // Height mesh
                 using (new EditorGUI.DisabledScope(true))
                 {
                     EditorGUILayout.PropertyField(m_BuildHeightMesh);
                 }
-
-                EditorGUILayout.PropertyField(m_HideEditorLogs);
 
                 EditorGUILayout.Space();
                 EditorGUI.indentLevel--;
@@ -314,22 +302,6 @@ namespace NavMeshPlus.Components.Editors
             }
         }
 
-#if UNITY_2022_2_OR_NEWER
-        [DrawGizmo(GizmoType.InSelectionHierarchy | GizmoType.Active | GizmoType.Pickable)]
-        static void RenderGizmoSelected(NavMeshSurface navSurface, GizmoType gizmoType)
-        {
-             //navSurface.navMeshDataInstance.FlagAsInSelectionHierarchy();
-            var method = navSurface.navMeshDataInstance.GetType().GetMethod("FlagAsInSelectionHierarchy", BindingFlags.NonPublic | BindingFlags.Instance);
-            method.Invoke(navSurface.navMeshDataInstance, null);
-            RenderBoxGizmo(navSurface, gizmoType, true);
-        }
-
-        [DrawGizmo(GizmoType.NotInSelectionHierarchy | GizmoType.Pickable)]
-        static void RenderGizmoNotSelected(NavMeshSurface navSurface, GizmoType gizmoType)
-        {
-            RenderBoxGizmo(navSurface, gizmoType, false);
-        }
-#else
         [DrawGizmo(GizmoType.Selected | GizmoType.Active | GizmoType.Pickable)]
         static void RenderBoxGizmoSelected(NavMeshSurface navSurface, GizmoType gizmoType)
         {
@@ -344,7 +316,6 @@ namespace NavMeshPlus.Components.Editors
             else
                 Gizmos.DrawIcon(navSurface.transform.position, "NavMeshSurface Icon", true);
         }
-#endif
 
         static void RenderBoxGizmo(NavMeshSurface navSurface, GizmoType gizmoType, bool selected)
         {

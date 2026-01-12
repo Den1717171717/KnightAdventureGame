@@ -1,18 +1,16 @@
-using JetBrains.Annotations;
-using UnityEngine;
 using System;
-
+using UnityEngine;
 
 [RequireComponent(typeof(PolygonCollider2D))]
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(EnemyAI))]
 public class EnemyEntity : MonoBehaviour
-{   
+{
+    [SerializeField] private EnemySO enemySO;
 
     public event EventHandler OnTakeHit;
     public event EventHandler OnDeath;
-
-    [SerializeField] private int _maxHealth;
+    
     private int _currentHealth;
 
     private PolygonCollider2D _polygonCollider2D;
@@ -28,22 +26,25 @@ public class EnemyEntity : MonoBehaviour
 
     private void Start()
     {
-        _currentHealth = _maxHealth;
+        _currentHealth = enemySO.enemyHealth;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("Attack");
+        if (collision.transform.TryGetComponent(out Player player))
+        {
+            player.TakeDamage(transform, enemySO.enemyDamageAmount);
+        }
     }
 
     public void TakeDamage(int damage)
     {
         _currentHealth -= damage;
         OnTakeHit?.Invoke(this, EventArgs.Empty);
-        DetectDeath();  
+        DetectDeath();
     }
-    
-    public void PolygonColliderTurnoff()
+
+    public void PolygonColliderTurnOff()
     {
         _polygonCollider2D.enabled = false;
     }
@@ -52,7 +53,6 @@ public class EnemyEntity : MonoBehaviour
     {
         _polygonCollider2D.enabled = true;
     }
-    
 
     private void DetectDeath()
     {
@@ -63,10 +63,9 @@ public class EnemyEntity : MonoBehaviour
 
             _enemyAI.SetDeathState();
 
-           OnDeath?.Invoke(this, EventArgs.Empty);
+            OnDeath?.Invoke(this, EventArgs.Empty);
         }
     }
 
-    
 
 }

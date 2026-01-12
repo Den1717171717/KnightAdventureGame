@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using UnityEngine.AI;
+using UnityEngine;
 using UnityEditor;
+using NavMeshPlus.Extensions;
 
-namespace NavMeshPlus.Extensions.Editors
+namespace NavMeshPlus.Editors.Extensions
 {
     [CanEditMultipleObjects]
     [CustomEditor(typeof(CollectSources2d))]
@@ -49,16 +51,6 @@ namespace NavMeshPlus.Extensions.Editors
                         item.transform.rotation = Quaternion.Euler(-90f, 0f, 0f);
                     }
                 }
-#if UNITY_6000_0_OR_NEWER
-                GUILayout.EndHorizontal();
-                foreach (CollectSources2d navSurface in targets)
-                {
-                    if (!Mathf.Approximately(navSurface.transform.eulerAngles.x, 270f))
-                    {
-                        EditorGUILayout.HelpBox("NavMeshSurface is not rotated respectively to (x-90;y0;z0). Apply rotation unless intended.", MessageType.Warning);
-                    }
-                }
-#else
                 if (GUILayout.Button(new GUIContent("Tilt Surface", "If your agent get stuck on vertical movement it may help to solve the issue. This will tilt Surface to -89.98. It may impact baking and navigation.")))
                 {
                     foreach (CollectSources2d item in targets)
@@ -74,7 +66,6 @@ namespace NavMeshPlus.Extensions.Editors
                         EditorGUILayout.HelpBox("NavMeshSurface is not rotated respectively to (x-90;y0;z0). Apply rotation unless intended.", MessageType.Warning);
                     }
                 }
-#endif
             }
         }
     }

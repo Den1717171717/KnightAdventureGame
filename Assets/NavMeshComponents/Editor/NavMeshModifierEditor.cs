@@ -1,6 +1,10 @@
+using NavMeshPlus.Components;
+using NavMeshPlus.Extensions;
 using UnityEditor;
+using UnityEditor.AI;
+using UnityEngine.AI;
 
-namespace NavMeshPlus.Components.Editors
+namespace NavMeshPlus.Editors.Components
 { 
     [CanEditMultipleObjects]
     [CustomEditor(typeof(NavMeshModifier))]
@@ -18,10 +22,13 @@ namespace NavMeshPlus.Components.Editors
             m_IgnoreFromBuild = serializedObject.FindProperty("m_IgnoreFromBuild");
             m_OverrideArea = serializedObject.FindProperty("m_OverrideArea");
 
-
+            NavMeshVisualizationSettings.showNavigation++;
         }
 
-
+        void OnDisable()
+        {
+            NavMeshVisualizationSettings.showNavigation--;
+        }
 
         public override void OnInspectorGUI()
         {
