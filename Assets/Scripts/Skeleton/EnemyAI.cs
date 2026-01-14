@@ -19,6 +19,15 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float attackingDistance = 2f;
     [SerializeField] private float attackRate = 2f;
     
+    [SerializeField] private float stuckCheckInterval = 0.25f;
+    [SerializeField] private float stuckMinMoveDistance = 0.03f;
+    [SerializeField] private float stuckTimeToRepath = 0.8f;
+
+    private Vector3 _stuckLastPos;
+    private float _stuckTimer;
+    private float _nextStuckCheckTime;
+
+    
     private float _nextAttackTime = 0f;
 
     private NavMeshAgent _navMeshAgent;
@@ -63,6 +72,7 @@ public class EnemyAI : MonoBehaviour
     {
         StateHandler();
         MovementDirectionHandler();
+        StuckHandler();
     }
 
     public void SetDeathState()
@@ -195,5 +205,39 @@ public class EnemyAI : MonoBehaviour
     {
         transform.rotation = sourcePosition.x > targetPosition.x ? Quaternion.Euler(0, -180, 0) : Quaternion.Euler(0, 0, 0);
     }
+    
+    private void StuckHandler()
+    {
+        if (Time.time < _nextStuckCheckTime) return;
+        _nextStuckCheckTime = Time.time + stuckCheckInterval;
+        
+        if (!_navMeshAgent.hasPath) { _stuckLastPos = transform.position; _stuckTimer = 0f; return; }
+
+        float moved = Vector3.Distance(transform.position, _stuckLastPos);
+
+        
+        if (moved < stuckMinMoveDistance && _navMeshAgent.remainingDistance > 0.4f)
+            _stuckTimer += stuckCheckInterval;
+        else
+            _stuckTimer = 0f;
+
+        _stuckLastPos = transform.position;
+
+        if (_stuckTimer >= stuckTimeToRepath)
+        {
+            _stuckTimer = 0f;
+            _navMeshAgent.ResetPath();
+
+            if (_currentState == State.Chasing)
+            {
+                _navMeshAgent.SetDestination(Player.Instance.transform.position);
+            }
+            else if (_currentState == State.Roaming)
+            {
+                _roamingTimer = 0f;
+            }
+        }
+    }
+
 
 }

@@ -9,10 +9,13 @@ public class Sword : MonoBehaviour
     public event EventHandler OnSwordSwing;
 
     private PolygonCollider2D _polygonCollider2D;
+    
+    private SwordSfx _swordSfx;
 
     private void Awake()
     {
         _polygonCollider2D = GetComponent<PolygonCollider2D>();
+        _swordSfx = GetComponent<SwordSfx>();
     }
 
     private void Start()
@@ -23,6 +26,8 @@ public class Sword : MonoBehaviour
     public void Attack()
     {
         AttackColliderTurnOffOn();
+
+        _swordSfx?.PlaySwing();
 
         OnSwordSwing?.Invoke(this, EventArgs.Empty);
     }

@@ -11286,7 +11286,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coins-chests-etc-2-0_565
+      name: miniHeart
       rect:
         serializedVersion: 2
         x: 320
@@ -51773,7 +51773,6 @@ TextureImporter:
       coins-chests-etc-2-0_562: 1004809615
       coins-chests-etc-2-0_563: -551989766
       coins-chests-etc-2-0_564: 514554854
-      coins-chests-etc-2-0_565: -751372612
       coins-chests-etc-2-0_566: 1840730606
       coins-chests-etc-2-0_567: 1859841313
       coins-chests-etc-2-0_568: -815785018
@@ -52255,6 +52254,7 @@ TextureImporter:
       coins-chests-etc-2-0_997: 220632307
       coins-chests-etc-2-0_998: 1758547112
       coins-chests-etc-2-0_999: 1558581699
+      miniHeart: -751372612
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

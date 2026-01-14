@@ -19,7 +19,11 @@ public class GameInput : MonoBehaviour
         _playerInputActions.Enable();
 
         _playerInputActions.Combat.Attack.started += PlayerAttack_started;
-        _playerInputActions.Player.Dash.performed += PlayerDash_perfomed;
+        _playerInputActions.Player.Dash.performed += _ =>
+        {
+            OnPlayerDash?.Invoke(this, EventArgs.Empty);
+        };
+
     }
 
     private void PlayerDash_perfomed(InputAction.CallbackContext obj)

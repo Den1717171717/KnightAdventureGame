@@ -13,6 +13,8 @@ public class SkeletonVisual : MonoBehaviour
     [SerializeField] private EnemyEntity enemyEntity;
     [SerializeField] private GameObject enemyShadow;
 
+    private EnemySwordSfx _enemySwordSfx;
+
     private Animator _animator;
 
     private const string IsRunning = "IsRunning";
@@ -27,6 +29,7 @@ public class SkeletonVisual : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _enemySwordSfx = GetComponentInParent<EnemySwordSfx>();
     }
 
     private void Start()
@@ -64,6 +67,7 @@ public class SkeletonVisual : MonoBehaviour
     public void TriggerAttackAnimationTurnOn()
     {
         enemyEntity.PolygonColliderTurnOn();
+        _enemySwordSfx?.PlaySwing();
     }
 
     private void _enemyAI_OnEnemyAttack(object sender, System.EventArgs e)

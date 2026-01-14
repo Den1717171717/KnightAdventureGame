@@ -101,6 +101,24 @@ public class Player : MonoBehaviour
 
         DetectDeath();
     }
+    
+    public void Heal(int amount)
+    {
+        if (!_isAlive) return;
+
+        int oldHealth = _currentHealth;
+        _currentHealth = Mathf.Min(maxHealth, _currentHealth + amount);
+
+        if (_currentHealth != oldHealth)
+        {
+            OnHealthChanged?.Invoke(this, new HealthChangedEventArgs
+            {
+                CurrentHealth = _currentHealth,
+                MaxHealth = maxHealth
+            });
+        }
+    }
+
 
     private void DetectDeath()
     {

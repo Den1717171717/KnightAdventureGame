@@ -16,6 +16,8 @@ public class EnemyEntity : MonoBehaviour
     private PolygonCollider2D _polygonCollider2D;
     private BoxCollider2D _boxCollider2D;
     private EnemyAI _enemyAI;
+    private bool _didHitPlayerThisSwing;
+    
 
     private void Awake()
     {
@@ -29,13 +31,33 @@ public class EnemyEntity : MonoBehaviour
         _currentHealth = enemySO.enemyHealth;
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnEnable()
     {
-        if (collision.transform.TryGetComponent(out Player player))
+        if (_enemyAI != null) _enemyAI.OnEnemyAttack += EnemyAI_OnEnemyAttack;
+    }
+
+    private void OnDisable()
+    {
+        if (_enemyAI != null) _enemyAI.OnEnemyAttack -= EnemyAI_OnEnemyAttack;
+    }
+
+    private void EnemyAI_OnEnemyAttack(object sender, EventArgs e)
+    {
+        _didHitPlayerThisSwing = false;
+    }
+    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!_polygonCollider2D.enabled) return;           
+        if (_didHitPlayerThisSwing) return;              
+
+        if (collision.TryGetComponent(out Player player))
         {
             player.TakeDamage(transform, enemySO.enemyDamageAmount);
+            _didHitPlayerThisSwing = true;
         }
     }
+
 
     public void TakeDamage(int damage)
     {
